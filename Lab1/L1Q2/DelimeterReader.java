@@ -1,10 +1,6 @@
 package Lab1.L1Q2;
 
-import java.nio.file.Paths;
-import java.nio.file.Files;
-import java.util.stream.Stream;
 import java.io.*;
-
 
 public class DelimeterReader {
 	public static String PUNCT = "[\\p{Punct}\\s]+";
@@ -19,15 +15,6 @@ public class DelimeterReader {
 	
 	public DelimeterReader(String filePath) {
 		this(filePath, DelimeterReader.PUNCT);
-	}
-	
-	public Stream<String> readLines(){
-		try {
-			return Files.lines(Paths.get(this.filePath));
-		} catch(Exception ex) {
-			ex.printStackTrace();
-			return null;
-		}
 	}
 	
 	public void printWithoutDelimeter() {
