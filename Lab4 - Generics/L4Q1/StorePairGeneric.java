@@ -27,9 +27,9 @@ public class StorePairGeneric<T extends Comparable<T>> implements Comparable<Sto
 	}
 	
 	@Override
-    public int compareTo(StorePairGeneric<T> another) {
-        return this.first.compareTo(another.first);
-    }
+	public int compareTo(StorePairGeneric<T> another) {
+		return this.first.compareTo(another.first);
+	}
 	
 	@Override
 	public boolean equals(Object anotherObject) {
