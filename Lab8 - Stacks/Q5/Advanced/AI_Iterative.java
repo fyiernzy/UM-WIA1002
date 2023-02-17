@@ -28,8 +28,4 @@ public class AI_Iterative extends AI {
 		else
 			return super.makeMove(dst, src);
 	}
-	
-	public static void main(String[] args) {
-		
-	}
 }
