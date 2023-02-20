@@ -9,7 +9,7 @@ public class A extends ConsoleCharacter {
 		buff[0][2] = buff[2][2] = true;
 		for (int i = 1; i < ConsoleCharacter.ROW; i++)
 			buff[i][1] = buff[i][3] = true;
-
+	
 		return buff;
 	}
 

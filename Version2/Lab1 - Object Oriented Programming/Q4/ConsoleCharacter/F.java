@@ -1,5 +1,22 @@
 package Lab1.Q4.ConsoleCharacter;
 
-public class F {
+public class F extends ConsoleCharacter {
+	public boolean[][] getUppercase() {
+		int column = 4;
+		boolean[][] buff = getBuff(column + 2);
+		plotVerticalLine(buff, 0, ROW - 1, 1);
+		plotHorizontalLine(buff, 2, 4, 0);
+		plotHorizontalLine(buff, 2, 3, 2);
+		
+		return buff;
+	}
 
+	public boolean[][] getLowercase() {
+		int column = 4;	
+		boolean[][] buff = getBuff(column + 2);
+		plotVerticalLine(buff, 0, ROW - 1, 2);
+		plotHorizontalLine(buff, 2, 3, 0);
+		plotHorizontalLine(buff, 1, 4, 2);
+		return buff;
+	}
 }

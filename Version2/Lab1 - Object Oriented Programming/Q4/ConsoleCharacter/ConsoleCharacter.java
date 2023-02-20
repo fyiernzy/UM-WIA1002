@@ -37,6 +37,16 @@ public abstract class ConsoleCharacter {
 			plotHorizontalLine(buff, startColumn, endColumn, row);
 	}
 	
+	protected void plotDotsInRow(boolean[][] buff, int row, int... dotColumns) {
+		for(int dotColumn : dotColumns)
+			buff[row][dotColumn] = true;
+	}
+	
+	protected void plotDotsInColumn(boolean[][] buff, int column, int... dotRows) {
+		for(int dotRow : dotRows)
+			buff[dotRow][column] = true;
+	}
+	
 	abstract boolean[][] getUppercase();
 	abstract boolean[][] getLowercase();
 	
