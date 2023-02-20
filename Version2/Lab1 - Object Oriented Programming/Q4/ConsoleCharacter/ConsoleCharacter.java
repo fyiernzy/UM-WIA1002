@@ -18,7 +18,7 @@ public abstract class ConsoleCharacter {
 	
 	protected void plotVerticalLines(boolean[][] buff, int startRow, int endRow, int... columns) {
 		for(int column : columns)
-			plotHorizontalLine(buff, startRow, endRow, column);
+			plotVerticalLine(buff, startRow, endRow, column);
 	}
 	
 	protected void plotHorizontalLine(boolean[][] buff, int startColumn, int endColumn, int row) {
@@ -43,7 +43,7 @@ public abstract class ConsoleCharacter {
 	
 	protected void plotDiagonalLeftTop(boolean[][] buff, int startRowIndex, int endRowIndex) {
 		for(int i = startRowIndex; i <= endRowIndex; i++) 
-			buff[i][i] = true;
+			buff[i][i + 1] = true;
 	}
 	
 	protected void plotDiagonalRightTop(boolean[][] buff, int startRowIndex, int endRowIndex) {
@@ -52,8 +52,8 @@ public abstract class ConsoleCharacter {
 			buff[i][column--] = true;
 	}
 	
-	abstract boolean[][] getUppercase();
-	abstract boolean[][] getLowercase();
+	public abstract boolean[][] getUppercase();
+	public abstract boolean[][] getLowercase();
 	
 	
 }

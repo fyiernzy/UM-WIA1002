@@ -11,10 +11,13 @@ public class M extends ConsoleCharacter {
 	}
 
 	public boolean[][] getLowercase() {
-		int column = 5;	
+		int column = 9;	
 		boolean[][] buff = getBuff(column + 2);
-		plotHorizontalLine(buff, 1, 5, 2);
-		plotVerticalLines(buff, 2, ROW - 1, new int[] {1, 3, 5});
+		plotDotsInRow(buff, 1, new int[] {2, 4, 6, 8});
+		plotVerticalLines(buff, 2, ROW - 1, new int[] {1, 5, 9});
+//		plotHorizontalLine(buff, 2, 3, 1);
+//		plotHorizontalLine(buff, 5, 6, 1);
+//		plotVerticalLines(buff, 2, ROW - 1, new int[] {1, 4, 7});
 		return buff;
 	}
 }
