@@ -6,8 +6,9 @@ import org.apache.commons.lang3.*;
 public class Banner {
 	private static final ConsoleCharacter[] COLLECTIONS = new ConsoleCharacter[] {
 			new A(), new B(), new C(), new D(), new E(), new F(), new G(), new H(),
-			new I(), new J(), new K(), new L(), new M()
-	};
+			new I(), new J(), new K(), new L(), new M(), new N(), new O(), new P(), 
+			new Q(), new R(), new S(), new T(), new U(), new V(), new W(), new X(),
+			new Y(), new Z(), new Space()};
 	
 	public void print(String message) {
 		if(isValidMessage(message)) {
@@ -15,7 +16,11 @@ public class Banner {
 			
 			for(int i = 0; i < message.length(); i++) {
 				char ch = message.charAt(i);
-				ConsoleCharacter character = COLLECTIONS[getPos(ch)];
+				ConsoleCharacter character;
+				if(Character.isWhitespace(ch))
+					character = COLLECTIONS[26];
+				else
+					character = COLLECTIONS[getPos(ch)];
 				combine(banner, Character.isUpperCase(ch) ? character.getUppercase() : character.getLowercase());
 			}
 			
