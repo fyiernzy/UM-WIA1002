@@ -22,5 +22,4 @@ public class G extends ConsoleCharacter {
 		return buff;
 	}
 	
-	
 }

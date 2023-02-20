@@ -4,23 +4,16 @@ public class B extends ConsoleCharacter {
 	public boolean[][] getUppercase() {
 		int column = 3;
 		boolean[][] buff = getBuff(column + 2);
-		
-		for (int i = 0; i < ConsoleCharacter.ROW; i++) 
-			buff[i][1] = true;
-		
-		buff[0][2] = buff[2][2] = buff[4][2] = true;
-		buff[1][3] = buff[3][3] = true;
-
+		plotVerticalLine(buff, 0, ROW - 1, 1);
+		plotDotsInColumn(buff, 2, new int[] {0, 2});
+		plotDotsInColumn(buff, 3, new int[] {1, 3});
 		return buff;
 	}
 
 	public boolean[][] getLowercase() {
 		int column = 4;
 		boolean[][] buff = getBuff(column + 2);
-
-		for (int i = 2; i < ConsoleCharacter.ROW; i++) 
-			buff[i][1] = buff[i][3] = true;
-		
+		plotVerticalLines(buff, 2, ROW - 1, new int[] {1, 3});
 		buff[0][1] = buff[1][1] = buff[2][2] = buff[3][2] = true;
 		return buff;
 	}
