@@ -6,11 +6,11 @@ public class N extends ConsoleCharacter {
         int column = 5;
         boolean[][] buff = getBuff(column + 2);
 
-        buff[1][1] = buff[2][2] = buff[3][3] = true;
+        buff[1][2] = buff[2][3] = buff[3][4] = true;
 
         for (int i = 0; i < ConsoleCharacter.ROW; i++) {
-            buff[i][0] = true;
-            buff[i][4] = true;
+            buff[i][1] = true;
+            buff[i][5] = true;
         }
 
         return buff;
