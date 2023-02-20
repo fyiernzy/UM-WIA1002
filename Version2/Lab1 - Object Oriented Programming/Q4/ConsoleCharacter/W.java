@@ -1,12 +1,9 @@
-
-package consolecharacter;
+package Lab1.Q4.ConsoleCharacter;
 
 public class W extends ConsoleCharacter{
       public boolean[][] getUppercase() {
         int column = 5;
         boolean[][] buff = getBuff(column + 2);
-
-        
         plotVerticalLine(buff, 1, 2, 0);
         plotVerticalLine(buff, 1, 2, 2);
         plotVerticalLine(buff, 1, 2, 4);

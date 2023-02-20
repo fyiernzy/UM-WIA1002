@@ -5,7 +5,7 @@ public class M extends ConsoleCharacter {
 		int column = 5;
 		boolean[][] buff = getBuff(column + 2);
 		plotVerticalLines(buff, 0, ROW - 1, new int[] {1, 5});
-		plotDiagonalLeftTop(buff, 0, 2);
+		plotSpecialDiagonalLeftTop(buff, 0, 2);
 		plotDiagonalRightTop(buff, 0, 2);
 		return buff;
 	}

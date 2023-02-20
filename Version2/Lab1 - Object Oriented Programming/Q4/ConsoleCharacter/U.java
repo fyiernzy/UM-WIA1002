@@ -1,4 +1,4 @@
-package consolecharacter;
+package Lab1.Q4.ConsoleCharacter;
 
 public class U extends ConsoleCharacter {
 
@@ -6,9 +6,9 @@ public class U extends ConsoleCharacter {
         int column = 5;
         boolean[][] buff = getBuff(column + 2);
 
-        plotHorizontalLine(buff, 1, 3, 4);
-        plotVerticalLine(buff, 0, 3, 0);
-        plotVerticalLine(buff, 0, 3, 4);
+        plotHorizontalLine(buff, 2, 4, 4);
+        plotVerticalLine(buff, 0, 3, 1);
+        plotVerticalLine(buff, 0, 3, 5);
         return buff;
     }
 

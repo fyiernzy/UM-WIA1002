@@ -1,12 +1,9 @@
-
-package consolecharacter;
+package Lab1.Q4.ConsoleCharacter;
 
 public class Y extends ConsoleCharacter{
       public boolean[][] getUppercase() {
         int column = 5;
         boolean[][] buff = getBuff(column + 2);
-
-  
           plotDiagonalLeftTop(buff, 0, 2);
           buff[1][3] = true;
           buff[0][4] = true;
