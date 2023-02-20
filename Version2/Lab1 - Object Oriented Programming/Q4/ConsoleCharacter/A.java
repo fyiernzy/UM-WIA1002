@@ -17,14 +17,13 @@ public class A extends ConsoleCharacter {
 		int column = 4;
 		boolean[][] buff = getBuff(column + 2);
 
-		for (int i = 0; i < ConsoleCharacter.ROW; i++) {
-			buff[i][column - 1] = true;
-		}
-
-		buff[0][1] = buff[0][2] = true;
-		buff[1][0] = buff[1][3] = true;
-		buff[2][0] = buff[2][3] = true;
-		buff[3][1] = buff[3][2] = true;
+		for (int i = 0; i < ConsoleCharacter.ROW; i++) 
+			buff[i][4] = true;
+		
+		buff[0][2] = buff[0][3] = true;
+		buff[1][1] = buff[1][4] = true;
+		buff[2][1] = buff[2][4] = true;
+		buff[3][2] = buff[3][3] = true;
 
 		return buff;
 	}

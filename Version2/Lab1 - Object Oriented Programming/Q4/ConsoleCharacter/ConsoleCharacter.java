@@ -11,6 +11,12 @@ public abstract class ConsoleCharacter {
 		return buff;
 	}
 	
+	protected void plotVerticalLine(boolean[][] buff, int column, int startRow, int endRow) {
+		for(int i = startRow; i <= endRow; i++) {
+			buff[i][column] = true;
+		}
+	}
+	
 	abstract boolean[][] getUppercase();
 	abstract boolean[][] getLowercase();
 	
