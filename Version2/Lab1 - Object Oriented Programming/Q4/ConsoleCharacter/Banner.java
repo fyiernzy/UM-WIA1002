@@ -1,4 +1,5 @@
-package Lab1.Q4.ConsoleCharacter;
+
+package consolecharacter;
 
 public class Banner {
 	private boolean[][] banner;
