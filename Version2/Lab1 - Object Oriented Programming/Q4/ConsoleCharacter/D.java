@@ -5,8 +5,8 @@ public class D extends ConsoleCharacter {
 		int column = 3;
 		boolean[][] buff = getBuff(column + 2);
 		
-		plotVerticalLine(buff, 1, 0, ROW - 1);
-		plotVerticalLine(buff, 3, 1, 3);
+		plotVerticalLine(buff, 0, ROW - 1, 1);
+		plotVerticalLine(buff, 1, 3, 3);
 		buff[0][2] = buff[4][2] = true;
 		
 		return buff;
@@ -16,8 +16,8 @@ public class D extends ConsoleCharacter {
 		int column = 4;
 		boolean[][] buff = getBuff(column + 2);
 
-		plotVerticalLine(buff, 3, 0, ROW - 1);
-		plotVerticalLine(buff, 1, 2, 4);
+		plotVerticalLine(buff, 0, ROW - 1, 3);
+		plotVerticalLine(buff, 2, 4, 1);
 		buff[2][2] = buff[4][2] = true;
 		
 		return buff;
