@@ -11,12 +11,6 @@ public abstract class ConsoleCharacter {
 		return buff;
 	}
 	
-	/**
-	 * @param buff the buffer to be plotted
-	 * @param column the column that should be plotted
-	 * @param startRow the row that plotting should start
-	 * @param endRow the row that plotting should end. Inclusive.
-	 */
 	protected void plotVerticalLine(boolean[][] buff, int startRow, int endRow, int column) {
 		for(int i = startRow; i <= endRow; i++) 
 			buff[i][column] = true;
@@ -45,6 +39,17 @@ public abstract class ConsoleCharacter {
 	protected void plotDotsInColumn(boolean[][] buff, int column, int... dotRows) {
 		for(int dotRow : dotRows)
 			buff[dotRow][column] = true;
+	}
+	
+	protected void plotDiagonalLeftTop(boolean[][] buff, int startRowIndex, int endRowIndex) {
+		for(int i = startRowIndex; i <= endRowIndex; i++) 
+			buff[i][i] = true;
+	}
+	
+	protected void plotDiagonalRightTop(boolean[][] buff, int startRowIndex, int endRowIndex) {
+		int column = buff[0].length - startRowIndex - 2;
+		for(int i = startRowIndex; i <= endRowIndex; i++)
+			buff[i][column--] = true;
 	}
 	
 	abstract boolean[][] getUppercase();
