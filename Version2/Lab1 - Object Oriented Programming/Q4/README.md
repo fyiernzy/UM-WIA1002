@@ -26,7 +26,7 @@ If we want to print the letter "A", the boolean array will be:
 
 Here, the initial value of the boolean array is false, and we use ' ' to represent false and '*' to represent true. To plot the "A", we can write the following code:
 
-`java
+```java
 arr[0][2] = true;
 arr[1][1] = arr[1][3] = true;
 arr[2][1] = arr[2][2] = arr[2][3] = true;
