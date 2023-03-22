@@ -1,6 +1,6 @@
-package T7;
+package T7a;
 
-public class T7Q1 {
+public class T7aQ1 {
 	public static void main(String[] args) {
 		/* 
 		 * a) Packet switching

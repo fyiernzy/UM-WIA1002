@@ -1,8 +1,8 @@
-package T7;
+package T7a;
 
 import java.util.*;
 
-public class T7Q4 {
+public class T7aQ4 {
 	public static void main(String[] args) {
 		java.util.Queue<Integer> X = new LinkedList<>();
 		X.add(14);

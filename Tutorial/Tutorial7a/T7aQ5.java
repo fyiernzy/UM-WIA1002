@@ -1,8 +1,8 @@
-package T7;
+package T7a;
 
 import java.util.LinkedList;
 
-public class T7Q5 {
+public class T7aQ5 {
 	// 1. add() = add an element to the last of the queue. If the queue fails to do so, it will throw an exception.
 	// 2. offer() = add an element to the last of the queue. If the queue fails to do so, it will return false.
 	// 3. poll() = remove the first element in the queue. If the queue fails to do so, it will return false.

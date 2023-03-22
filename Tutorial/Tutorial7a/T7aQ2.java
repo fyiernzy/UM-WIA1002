@@ -1,6 +1,6 @@
-package T7;
+package T7a;
 
-public class T7Q2 {
+public class T7aQ2 {
 
 	/*
 	 * Queue 

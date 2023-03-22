@@ -1,10 +1,10 @@
-package T7;
+package T7a;
 
 import java.util.Queue;
 import java.util.Scanner;
 import java.util.LinkedList;
 
-public class T7Q3 {
+public class T7aQ3 {
 	public static void main(String[] args) {
 		Queue<Integer> q = new LinkedList<Integer>();
 		Scanner keyIn = new Scanner(System.in);
