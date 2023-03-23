@@ -2,7 +2,9 @@
 
 There are various algorithms available for computing the intersection and difference of two sets. 
 
-## First Approach
+## Intersection
+
+### First Approach
 
 One of the most intuitive and efficient methods is to iterate through the first set and compare its elements with the elements of the second set. If a match is found, the element is added to the intersection set; otherwise, it is ignored. In this regard, the code provided by [@samweihong](https://github.com/samweihong/WIA1002-Data-Structure/blob/master/src/lab3/ArrayBag.java) for the intersection method is a good example of this approach. The code iterates through the first set and checks if each element is present in the second set. If a match is found, the element is added to the intersection set. 
 
@@ -22,8 +24,7 @@ public BagInterface<T> intersection(BagInterface<? extends T> bag2) {
         return intersection;
 }
 ```
-
-## Second Approach
+### Second Approach
 
 However, there are alternative approaches available, such as the one presented by [@LimJY](https://github.com/LimJY03/WIA1002_UM/blob/main/Lab_03/ArrayBag.java). This method first converts the sets to arrays and then iterates through the smaller array to check if each element is present in the larger array. If a match is found, the element is added to the `intersection` set `lowerFreq` times, where `lowerFreq` is the minimum frequency of the element in the two sets.
 
@@ -62,7 +63,24 @@ public BagInterface<T> intersect(BagInterface<T> bag) {
     }
 ```
 
-## Third Approach
+## Difference
+
+The codes provided by both[@samweihong](https://github.com/samweihong/WIA1002-Data-Structure/blob/master/src/lab3/ArrayBag.java) and [@LimJY](https://github.com/LimJY03/WIA1002_UM/blob/main/Lab_03/ArrayBag.java) are identical. The implementation is straightforward and intuitive, whereby all elements are added to the bag and any existing elements in another bag are subsequently removed.
+
+```java
+@Override
+public BagInterface<T> difference(BagInterface<? extends T> bag2) {
+    ArrayBag<T> difference = new ArrayBag<>();
+    for (int i = 0; i < numberOfEntries; i++)
+        difference.add(bag[i]);
+    T[] bag2Array = bag2.toArray();
+    for (T t : bag2Array)
+        difference.remove(t);
+    return difference;
+}
+```
+
+## Batch Remove
 ```java
 @Override
 public BagInterface<T> intersection(BagInterface<T> anotherBag) {
