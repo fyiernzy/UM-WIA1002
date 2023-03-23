@@ -3,7 +3,7 @@ package Lab2.L2Q4;
 import java.util.Arrays;
 
 public class Tools {
-	public static <T extends Comparable<T>> String minmax(T... args) {
+	public static <T extends Comparable<T>> String minmax(T[] args) {
 		T min = args[0], max = args[0];
 		
 		for(int i = 1; i < args.length; i++) {
@@ -17,7 +17,7 @@ public class Tools {
 		return String.format("Min = %s Max = %s", min, max);
 	}
 	
-	public static <T extends Comparable<T>> String minMax(T... args) {
+	public static <T extends Comparable<T>> String minMax(T[] args) {
 		T min = Arrays.stream(args).min((a, b) -> a.compareTo(b)).get();
 		T max = Arrays.stream(args).max((a, b) -> a.compareTo(b)).get();
 		

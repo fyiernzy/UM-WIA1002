@@ -21,7 +21,7 @@ public class Tester {
 		testFunction(2, intArray);
 	}
 	
-	public static <T extends Comparable<T>> void testFunction(int functionCode, T... args) {
+	public static <T extends Comparable<T>> void testFunction(int functionCode, T[] args) {
 		if (!(functionCode <= 2 && functionCode >= 1)) {
 			System.out.println("Invalid code");
 			return ;
