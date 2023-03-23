@@ -16,6 +16,7 @@ public class T8Q3 {
         graph.addEdge('G', 'H');
         graph.addEdge('H', 'I');
         graph.showAdjacencyList();
+        // Adjacency list is used
 	}
 }
 

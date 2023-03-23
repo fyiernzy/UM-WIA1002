@@ -16,6 +16,7 @@ public class T8Q2 {
              {0, 0, 0, 0, 0, 0, 0, 0, 0}};
 		
 		printAdjacencyMatrix(adjacencyMatrix);
+		// Adjacency matrix is used
 	}
 	
 	public static void printAdjacencyMatrix(int[][] adjacencyMatrix) {
