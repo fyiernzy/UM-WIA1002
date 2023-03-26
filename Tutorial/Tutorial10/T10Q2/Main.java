@@ -6,14 +6,11 @@ public class Main {
 		algo = new InsertionSort();
 		algo.run();
 		
-		
 		algo = new SelectionSort();
 		algo.run();
 		
-		
 		algo = new BubbleSort();
 		algo.run();
-		
 		
 		algo = new MergeSort();
 		algo.run();
