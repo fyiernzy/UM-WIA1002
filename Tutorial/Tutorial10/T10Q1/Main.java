@@ -21,13 +21,18 @@ public class Main {
 
 		for (int size = initialSize, i = 0; size <= finalSize; size *= 10, i++) {
 			long[] times = run(size, LOW, HIGH, REPEAT);
-			System.out.println(Arrays.toString(times));
+			System.out.printf("When size = %d, total time used = %s\n", size, Arrays.toString(times));
 			xAxis[i] = size;
 			for (int j = 0; j < times.length; j++)
 				yAxis[j][i] = times[j] / REPEAT;
 		}
-	
-		System.out.println(Arrays.deepToString(yAxis));
+		
+		System.out.println("\nThe average time used (in increasing size):");
+		System.out.printf("  %-25s = %s\n", "Size", Arrays.toString(xAxis));
+		System.out.printf("  %-25s = %s\n", "Linear Search", Arrays.toString(yAxis[0]));
+		System.out.printf("  %-25s = %s\n", "Recursive Binary Search", Arrays.toString(yAxis[1]));
+		System.out.printf("  %-25s = %s\n", "Iterative Binary Search", Arrays.toString(yAxis[2]));
+		
 		String[] series = new String[] {"Linear Search", "Binary Search (Iteratively)", "Binary Search (Recursively)"};
 		GraphDrawer drawer = new GraphDrawer(
 				"Line Chart",
