@@ -30,11 +30,21 @@ Some directories in this repository may contain external JAR (Java Archive) file
 - [How to put a jar in classpath in Eclipse?](https://stackoverflow.com/questions/11463354/how-to-put-a-jar-in-classpath-in-eclipse)
 - [How to add jar to Netbeans](https://users.cs.fiu.edu/~downeyt/webdev/netbeans.html)
 
-## Guidance 
+## Guidance
 
-Some directories contains **`README.md`** which aims to provide the explanation on the question, including approach explanation as well as the comparison among different approaches. Kindly refer to these documentation for comrehensive understanding. Also
+### About `README.md`
 
-## Contribution
+Some of the directories in this repository contain `README.md` files, which provide detailed explanations of the questions and approaches, as well as comparisons between different approaches. These files can be used to gain a comprehensive understanding of the code and its functionality.
+
+### Forking the Repo
+
+To make it easier to access the repository even without an internet connection, you can `fork` the entire repository. By forking, you can contribute to the repository by adding more functionality, simplifying the code, adding test units, and more. You can refer to the article [**Fork a Repo**](https://docs.github.com/en/get-started/quickstart/fork-a-repo) for more details on how to fork a repository.
+
+### Star the Repo
+
+Don't forget to `star` this repository to receive the latest updates. The repository may be updated from time to time to make the code simpler, add comments, add `README.md` files, or even add self-written notes to help others understand the code better.
+
+### Contribution
 
 Should you wish to contribute to this repository, feel free to create a pull request. To know more about pull request and how to do it, please refer to the following GitHub Documentations:
 
