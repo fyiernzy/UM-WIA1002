@@ -31,14 +31,10 @@ public class StorePairGeneric<T extends Comparable<T>> implements Comparable<Sto
         return this.first.compareTo(another.first);
     }
 	
-	@Override
+	@Override @SuppressWarnings("unchecked")
 	public boolean equals(Object anotherObject) {
-		if (!(anotherObject instanceof StorePairGeneric)) 
-	        return false;
-	    if (!(anotherObject.getClass().equals(this.getClass()))) 
-	        return false;
-	    
-	    @SuppressWarnings("unchecked")
+		if(this == anotherObject) return true;
+		if(anotherObject == null || anotherObject.getClass() != this.getClass()) return false;	    
 		StorePairGeneric<T> another = (StorePairGeneric<T>) anotherObject;
 	    return another.getFirst().equals(this.getFirst());
 	}
