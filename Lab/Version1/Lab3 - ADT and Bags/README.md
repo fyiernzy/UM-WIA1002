@@ -101,7 +101,7 @@ public BagInterface<T> batchRemove(BagInterface<T> anotherBag, boolean complemen
 
 		int freq1 = getFrequencyOf(bag[i]);
 		int freq2 = anotherBag.getFrequencyOf(bag[i]);
-		int end = (complement) ? Math.abs(freq1 - freq2) : Math.min(freq1, freq2);
+		int end = (complement) ? freq1 - freq2 : Math.min(freq1, freq2);
 
 		for(int j = 0; j < end; j++)
 			newBag.add(bag[i]);
