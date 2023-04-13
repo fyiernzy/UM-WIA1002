@@ -1,4 +1,4 @@
-package LabTest2;
+package LabTest1.Thursday;
 
 import java.util.*;
 
@@ -9,7 +9,7 @@ public class TestDS2023Generics {
         testCPU();
         testGPU();
     }
-
+    
     public static void testCPU() throws java.lang.Exception {
         System.out.println("=== CPU Class constructors, conversions and string representation ===");
         CpuInt a = new CpuInt(3);
@@ -35,7 +35,7 @@ public class TestDS2023Generics {
         }
 
         System.out.println("=== CPU Vector multiplications ===");
-        bb = VecUtil.mul(bb, new CpuInt(3)); // Vec * Scalar
+        bb = VecUtil.mul(bb, new CpuInt(3)); 
         ArrayList<CpuInt> cc = VecUtil.mul(aa, bb);
         VecUtil.printVec(bb);
         VecUtil.printVec(cc);
@@ -43,6 +43,7 @@ public class TestDS2023Generics {
         if (progress < 4) {
             return;
         }
+
         System.out.println("=== CPU Vector Dot Product ===");
         System.out.println(VecUtil.dot(aa, bb));
         System.out.println("---");
@@ -60,6 +61,7 @@ public class TestDS2023Generics {
         if (progress < 2) {
             return;
         }
+
         System.out.println("=== GPU Vector constructors and printing ===");
         ArrayList<GpuInt> aa = VecUtil.arr2vec(GpuInt.class, new int[] { 1, 2, 3 });
         ArrayList<GpuInt> bb = VecUtil.ones(GpuInt.class, 3);
@@ -69,6 +71,7 @@ public class TestDS2023Generics {
         if (progress < 3) {
             return;
         }
+
         System.out.println("=== GPU Vector multiplications ===");
         bb = VecUtil.mul(bb, new GpuInt(3)); // Vec * Scalar
         ArrayList<GpuInt> cc = VecUtil.mul(aa, bb);
@@ -78,6 +81,7 @@ public class TestDS2023Generics {
         if (progress < 4) {
             return;
         }
+
         System.out.println("=== GPU Vector Dot Product ===");
         System.out.println(VecUtil.dot(aa, bb));
         System.out.println("---");
