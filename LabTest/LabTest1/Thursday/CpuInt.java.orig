@@ -7,12 +7,22 @@ package LabTest2;
 public class CpuInt implements NumberInterface<CpuInt> {
     int value;
 
+<<<<<<< HEAD
     CpuInt() {}
 
+=======
+>>>>>>> 129277fd21cf970db6c8d8164e6173180d31c56c
     CpuInt(int value) {
         this.value = value;
     }
 
+<<<<<<< HEAD
+=======
+    CpuInt() {
+        this(0);
+    }
+
+>>>>>>> 129277fd21cf970db6c8d8164e6173180d31c56c
     @Override
     public CpuInt fromInteger(int value) {
         return new CpuInt(value);
@@ -20,7 +30,11 @@ public class CpuInt implements NumberInterface<CpuInt> {
 
     @Override
     public Integer toInteger() {
+<<<<<<< HEAD
         return value;
+=======
+        return (Integer) value;
+>>>>>>> 129277fd21cf970db6c8d8164e6173180d31c56c
     }
 
     @Override
