@@ -1,6 +1,6 @@
-package LabTest2;
+package LabTest1.Thursday;
 
-import java.util.*;
+import java.util.ArrayList;
 
 public class VecUtil {
     public static <E> ArrayList<E> arr2vec(Class<E> c, int[] array) {
@@ -9,7 +9,7 @@ public class VecUtil {
             try {
                 E elem = c.getDeclaredConstructor(int.class).newInstance(i);
                 vec.add(elem);
-            } catch (Exception e) {
+            } catch (ReflectiveOperationException e) {
                 e.printStackTrace();
             }
         }
@@ -31,7 +31,8 @@ public class VecUtil {
 
     public static <E extends NumberInterface<E>> void printVec(ArrayList<E> vec) {
         StringBuilder sb = new StringBuilder();
-        sb.append('C').append('P').append('U').append('[');
+        String device = vec.get(0).getDevice();
+        sb.append(device).append('[');
         for (NumberInterface<E> obj : vec)
             sb.append(obj.toInteger()).append(',').append(' ');
         sb.setLength(sb.length() - 2);
@@ -53,14 +54,10 @@ public class VecUtil {
     }
 
     public static <E extends NumberInterface<E>> NumberInterface<E> dot(ArrayList<E> vec1, ArrayList<E> vec2) {
-        ArrayList<E> newVec = new ArrayList<>();
-        for (int i = 0; i < vec1.size(); i++) {
-            newVec.add(vec1.get(i).mul(vec2.get(i)));
-        }
+        ArrayList<E> newVec = VecUtil.mul(vec1, vec2);
         E dotProduct = newVec.get(0).fromInteger(0);
-        for (NumberInterface<E> obj : newVec) {
+        for (NumberInterface<E> obj : newVec) 
             dotProduct = obj.add(dotProduct);
-        }
         return dotProduct;
     }
 
