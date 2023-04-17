@@ -16,7 +16,10 @@ public class Main {
         // this ONE statement should be able to compile and execute
         // you are not allowed to split this into multiple statements
         transactions.dataCleaning().transformation();
-        // print out all data in transactions
+        for (Data<Double> data : transactions.getData())
+            System.out.printf("%10s %10.2f %10d\n", data.getUser(), data.getData(), data.getDate());
+        System.out.println();
+                // print out all data in transactions
         // initialize 'logins' (Login object) first
         // with all data shown in Login Table above
         Login logins = new Login(new ArrayList<>(List.of(
@@ -79,8 +82,11 @@ public class Main {
         List<List<?>> list = pointInTimeJoin(List.of(transactions, logins), fraudulent);
         // print out the result of pointInTimeJoin()
         System.out.printf("%10s %10s %10s %10s\n", "deviation", "latitude", "longitude", "is_fraud");
-        for (List<?> row : list)
+        for (List<?> row : list) {
+            // System.out.println(row.get(1));
             System.out.printf("%10.2f %10s %10b\n", (double) row.get(0), row.get(1), row.get(2));
+        }
+            
     }
 
     public static List<List<?>> pointInTimeJoin(List<Feature<?>> features, Feature<? extends Comparable<?>> label) {
@@ -107,6 +113,7 @@ public class Main {
             }
             row.add(labelData.getData());
             res.add(row);
+            // System.out.println(row);
         }
         return res;
     }
