@@ -20,8 +20,7 @@ public class Main {
         login.dataCleaning();
 
         fraudulent.dataCleaning().transformation(isFraud -> isFraud)
-                .merge(
-                        scaleFraudulent.dataCleaning().transformation(fraudScale -> fraudScale < 0.5 ? 0.0 : 1.0),
+                .merge(scaleFraudulent.dataCleaning().transformation(fraudScale -> fraudScale < 0.5 ? 0.0 : 1.0),
                         fraudScale -> fraudScale >= 0.5);
         scaleFraudulentCopy.dataCleaning()
                 .merge(fraudulentCopy.dataCleaning(), isFraud -> isFraud ? 1.0 : 0.0)
