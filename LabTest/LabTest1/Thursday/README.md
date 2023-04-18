@@ -1,6 +1,6 @@
 # Solution Overview
 
-The complexity of the LabTest is exacerbated by a 7-page question filled with dense jargon and incorporating the concept of linear algebra, making it challenging for candidates to comprehend and analyze the question requirements. Moreover, the introduction of a new class and intricate conditions further compounds the difficulty of the test. Nonetheless, with the assistance of ChatGPT, once the candidate has grasped the question's essence, they should be able to solve it with ease.
+The complexity of the LabTest is exacerbated by a 7-page question filled with dense jargon and incorporating the concept of linear algebra, making it challenging for candidates to comprehend and analyze the question requirements. Moreover, the introduction of a new class and intricate conditions further compounds the difficulty of the test. Nonetheless, with the assistance of ChatGPT, once we have grasped the question's essence, they should be able to solve it with ease.
 
 ## `CpuInt` and `GpuInt`
 
