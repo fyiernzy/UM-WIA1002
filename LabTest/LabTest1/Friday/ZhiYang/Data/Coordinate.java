@@ -24,7 +24,7 @@ public class Coordinate implements Comparable<Coordinate> {
 
     @Override
     public String toString() {
-        return String.format("[%5.1f, %5.1f]", this.latitude, this.longitude);
+        return String.format("%6.1f, %6.1f", this.latitude, this.longitude);
     }
 
     @Override
