@@ -8,12 +8,12 @@ import Friday.Utils.*;
 public class Main {
     public static void main(String[] args) {
         // * Initialize the features
-        Transaction transaction = new Transaction(Dataset.getSortedTransactionTable());
-        Login login = new Login(Dataset.getSortedLoginTable());
-        Fraudulent<Boolean> fraudulent = new Fraudulent<>(Dataset.getSortedFraudTable());
-        Fraudulent<Double> scaleFraudulent = new Fraudulent<>(Dataset.getSortedFraudScaleTable());
-        Fraudulent<Boolean> fraudulentCopy = new Fraudulent<>(Dataset.getSortedFraudTable());
-        Fraudulent<Double> scaleFraudulentCopy = new Fraudulent<>(Dataset.getSortedFraudScaleTable());
+        Transaction transaction = new Transaction(Dataset.getTransactionTable());
+        Login login = new Login(Dataset.getLoginTable());
+        Fraudulent<Boolean> fraudulent = new Fraudulent<>(Dataset.getFraudTable());
+        Fraudulent<Double> scaleFraudulent = new Fraudulent<>(Dataset.getFraudScaleTable());
+        Fraudulent<Boolean> fraudulentCopy = new Fraudulent<>(Dataset.getFraudTable());
+        Fraudulent<Double> scaleFraudulentCopy = new Fraudulent<>(Dataset.getFraudScaleTable());
 
         // * Perform data cleaning and transformation
         transaction.dataCleaning().transformation();
@@ -26,19 +26,15 @@ public class Main {
         scaleFraudulentCopy.dataCleaning()
                 .merge(fraudulentCopy.dataCleaning(), isFraud -> isFraud ? 1.0 : 0.0)
                 .transformation(fraudScale -> fraudScale < 0.5 ? 0.0 : 1.0);
+        List<List<?>> list = pointInTimeJoin(List.of(transaction, login), fraudulent);
 
         // * Print the features
-        TableUtil.printTable(transaction, "Transaction Table", new String[] { "User", "Transaction", "Date" });
-        TableUtil.printTable(login, "Login Table", new String[] { "User", "Coordinate", "Date" });
-        TableUtil.printTable(fraudulent, "Fraud Table", new String[] { "User", "is_fraud", "Date" });
-        TableUtil.printTable(scaleFraudulentCopy, "Fraud Scale Table", new String[] { "User", "fraud_scale", "Date" });
-
-        List<List<?>> list = pointInTimeJoin(List.of(transaction, login), fraudulent);
-        System.out.printf("%10s %10s %10s %10s\n", "deviation", "latitude",
-                "longitude", "is_fraud");
-        for (List<?> row : list)
-            System.out.printf("%10.2f %10s %10b\n", (double) row.get(0), row.get(1),
-                    row.get(2));
+        TableUtil.printFeatureTable(transaction, TableConstants.TRANSACTION_TITLE, TableConstants.TRANSACTION_LABELS);
+        TableUtil.printFeatureTable(login, TableConstants.LOGIN_TITLE, TableConstants.LOGIN_LABELS);
+        TableUtil.printFeatureTable(fraudulent, TableConstants.FRAUD_TITLE, TableConstants.FRAUD_LABELS);
+        TableUtil.printFeatureTable(scaleFraudulentCopy, TableConstants.FRAUD_SCALE_TITLE,
+                TableConstants.FRAUD_SCALE_LABELS);
+        TableUtil.printMergedTable(list, TableConstants.MERGED_TITLE, new String[] { "Deviation", "Coordinate", "isFraud" });
     }
 
     /**
@@ -79,9 +75,7 @@ public class Main {
             }
             row.add(labelData.getData());
             res.add(row);
-            // System.out.println(row);
         }
         return res;
     }
-
 }
