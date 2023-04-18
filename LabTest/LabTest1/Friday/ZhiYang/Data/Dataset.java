@@ -13,12 +13,12 @@ public class Dataset {
         );
 
     private static final List<Data<Coordinate>> LOGIN_TABLE = List.of(
-        new Data<>("user1", new Coordinate(-80.3, 79.1), 0),
-                new Data<>("user2", new Coordinate(95.6, -112.3), 0),
-                new Data<>("user2", new Coordinate(80.4, 165.4), 2),
-                new Data<>("user2", new Coordinate(78.2, 177.3), 1),
-                new Data<>("user3", new Coordinate(-128.3, 12.5), 3),
-                new Data<>("user3", new Coordinate(3.5, 23.7), 0)
+                new Data<>("user 1", new Coordinate(-80.3, 79.1), 0),
+                new Data<>("user 2", new Coordinate(95.6, -112.3), 0),
+                new Data<>("user 2", new Coordinate(80.4, 165.4), 2),
+                new Data<>("user 2", new Coordinate(78.2, 177.3), 1),
+                new Data<>("user 3", new Coordinate(-128.3, 12.5), 3),
+                new Data<>("user 3", new Coordinate(3.5, 23.7), 0)
     );
 
     private static final List<Data<Boolean>> FRAUD_TABLE = List.of(
@@ -27,8 +27,8 @@ public class Dataset {
     );
 
     private static final List<Data<Double>> FRAUD_SCALE_TABLE = List.of(
-        new Data<>("user 1", 0.7, 2),
-        new Data<>("user 2", 0.3, 3)
+        new Data<>("user 2", 0.7, 2),
+        new Data<>("user 3", 0.3, 3)
     );
 
     /**
