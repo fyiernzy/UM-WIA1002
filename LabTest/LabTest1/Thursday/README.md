@@ -124,7 +124,7 @@ Note that the dot product is a scalar value.
 
 So, let's take a look into the hardest code snippet, which the code snippet for the `VecUtil.java`, which stands for "Vector Utilities". Personally, the hardest part will be the following:
 
-### **`.arr2vec(Class<E> c, int[] array)`**
+### .arr2vec(Class<E> c, int[] array)
 
 ```java
 public static <E> ArrayList<E> arr2vec(Class<E> c, int[] array) {
@@ -143,7 +143,7 @@ public static <E> ArrayList<E> arr2vec(Class<E> c, int[] array) {
 
 The purpose of the arr2vec method, as its name suggests, is to convert an array of integers into a vector of integers, representing the concept of a vector in linear algebra. For instance, given the vector representation v = <x1, x2, x3>, converting the integer array int[] arr = {1, 2, 3} to a vector would result in v = <1, 2, 3>.
 
-### **`.ones(Class<E> c, int size)`**
+### .ones(Class<E> c, int size)
 
 ```java
 public static <E> ArrayList<E> ones(Class<E> c, int size) {
@@ -162,7 +162,7 @@ public static <E> ArrayList<E> ones(Class<E> c, int size) {
 
 Similarly, the ones() method generates a vector of 1's with a size of size. For example, if the given size is 3, the method should produce the vector <1, 1, 1>. Conversely, if the size is 4, the method should generate the vector <1, 1, 1, 1>.
 
-### `Class.java`
+### Class.java
 
 The most challenging aspect of the code lies in the invocation of the c.getDeclaredConstructor(int.class).newInstance(i) method and the ReflectiveOperationException class. Essentially, the `Class<E>` is a generic class that can represent the class of an object. Typically, we use the `instanceof` operator to check if an object is a subclass of another class, as shown in the example:
 
