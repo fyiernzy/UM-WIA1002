@@ -29,7 +29,9 @@ class CpuInt {
 }
 ```
 
-Essentially, CpuInt functions similarly to an Integer object that stores an integer value and performs basic arithmetic operations such as addition and multiplication through its add() and mul() methods, respectively. To better comprehend this concept, let us examine the following examples:
+Essentially, CpuInt functions similarly to an Integer object that stores an integer value and performs basic arithmetic operations such as addition and multiplication through its `add()` and `mul() methods`, respectively. To better comprehend this concept, let us examine the following examples:
+
+**`add()`**
 
 ```java
 int a = 5;
@@ -43,7 +45,7 @@ CpuInt cc = aa.add(bb); // Output: CPU Debug: 5 + 6 = 11
 System.out.print(cc.toString()); // Output: CPU[11];
 ```
 
-Similarly,
+**`mul()`**
 
 ```java
 int a = 5;
@@ -57,11 +59,11 @@ CpuInt cc = aa.mul(bb); // Output: CPU Debug: 5 * 6 = 30
 System.out.print(cc.toString()); // Output: CPU[30];
 ```
 
-Similarly, the concept of CpuInt.java is applied to GpuInt.java. In essence, both classes operate similarly to the Integer class, enabling basic arithmetic operations and returning values of the same data type.
+Similarly, the concept of `CpuInt.java` is applied to `GpuInt.java`. In essence, both classes operate similarly to the `Integer` class, enabling basic arithmetic operations and returning values of the same data type.
 
 ## Basic Linear Algebra
 
-To gain a better understanding of the question, candidates should possess a fundamental comprehension of linear algebra and familiarize themselves with terminologies such as scalar and dot product. Furthermore, it is essential to know how to execute the multiplication between a vector and scalar, between two vectors, as well as the dot product between two vectors.
+To gain a better understanding of the question, we should possess a fundamental comprehension of linear algebra and familiarize themselves with terminologies such as scalar and dot product. Furthermore, it is essential to know how to execute the multiplication between a vector and scalar, between two vectors, as well as the dot product between two vectors.
 
 [Definition of scalar](https://www.britannica.com/science/scalar)
 > Scalar is a physical quantity that is completely described by its magnitude.
@@ -94,12 +96,14 @@ Sure, here are some examples of vectors of three with low-magnitude values subst
 
 ### **Examples**
 
-Example 1: Multiplication between vector and scalar
+#### Example 1 - Multiplication between vector and scalar
+
 Let $\vec{v} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ and $a = 0.5$. Then, the multiplication between $\vec{v}$ and $a$ is:
 
 $$a\vec{v} = 0.5 \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} = \begin{pmatrix} 0.5 \\ 1 \\ 1.5 \end{pmatrix}$$
 
-Example 2: Multiplication between two vectors
+#### Example 2: Multiplication between two vectors
+
 When both vectors have the dimension of $3 \times 1$, their multiplication is not well-defined. Instead, we can consider the Hadamard (element-wise) product between the two vectors, which is an operation that produces a new vector of the same dimension as the original vectors, by multiplying the corresponding elements of the vectors.
 
 Let $\vec{v} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ and $\vec{w} = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$. Then, the Hadamard product between $\vec{v}$ and $\vec{w}$ is:
@@ -108,7 +112,8 @@ $$\vec{v} \circ \vec{w} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix} \circ \begin
 
 Note that the resulting vector has the same dimension $3 \times 1$ as the original vectors.
 
-Example 3: Dot product between two vectors
+#### Example 3: Dot product between two vectors
+
 Let $\vec{v} = \begin{pmatrix} 1 \\ 2 \\ 3 \end{pmatrix}$ and $\vec{w} = \begin{pmatrix} 4 \\ 5 \\ 6 \end{pmatrix}$. Then, the dot product between $\vec{v}$ and $\vec{w}$ is:
 
 $$\vec{v} \cdot \vec{w} = (1 \cdot 4) + (2 \cdot 5) + (3 \cdot 6) = 32$$
@@ -119,7 +124,7 @@ Note that the dot product is a scalar value.
 
 So, let's take a look into the hardest code snippet, which the code snippet for the `VecUtil.java`, which stands for "Vector Utilities". Personally, the hardest part will be the following:
 
-**`.arr2vec(Class<E> c, int[] array)`**
+### **`.arr2vec(Class<E> c, int[] array)`**
 
 ```java
 public static <E> ArrayList<E> arr2vec(Class<E> c, int[] array) {
@@ -138,7 +143,7 @@ public static <E> ArrayList<E> arr2vec(Class<E> c, int[] array) {
 
 The purpose of the arr2vec method, as its name suggests, is to convert an array of integers into a vector of integers, representing the concept of a vector in linear algebra. For instance, given the vector representation v = <x1, x2, x3>, converting the integer array int[] arr = {1, 2, 3} to a vector would result in v = <1, 2, 3>.
 
-**`.ones(Class<E> c, int size)`**
+### **`.ones(Class<E> c, int size)`**
 
 ```java
 public static <E> ArrayList<E> ones(Class<E> c, int size) {
@@ -157,7 +162,7 @@ public static <E> ArrayList<E> ones(Class<E> c, int size) {
 
 Similarly, the ones() method generates a vector of 1's with a size of size. For example, if the given size is 3, the method should produce the vector <1, 1, 1>. Conversely, if the size is 4, the method should generate the vector <1, 1, 1, 1>.
 
-## `Class.java`
+### `Class.java`
 
 The most challenging aspect of the code lies in the invocation of the c.getDeclaredConstructor(int.class).newInstance(i) method and the ReflectiveOperationException class. Essentially, the `Class<E>` is a generic class that can represent the class of an object. Typically, we use the `instanceof` operator to check if an object is a subclass of another class, as shown in the example:
 
