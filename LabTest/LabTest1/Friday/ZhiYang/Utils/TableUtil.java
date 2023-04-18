@@ -8,9 +8,39 @@ public class TableUtil {
     public static final int CELL_LENGTH = 20;
     public static final String SYMBOL = "-";
 
-    public static <E extends Comparable<E>> void printTable(Feature<E> feature, String title, String[] labels) {
+    public static void printFeatureTable(Feature<?> feature, String title, String[] labels) {
+        printTable(featureTableContent(feature), title, labels);
+    }
+
+    public static void printMergedTable(List<List<?>> list, String title, String[] labels) {
+        printTable(mergedTableContent(list), title, labels);
+    }
+
+    private static String featureTableContent(Feature<?> feature) {
+        StringBuilder sb = new StringBuilder();
+        for (Data<?> data : feature.dataList())
+            sb.append(String.format("|%s|%s|%s|\n",
+                    middleString(data.getUser()),
+                    middleString(value(data.getData())),
+                    middleString(value(data.getDate()))));
+        return sb.toString();
+    }
+
+    private static String mergedTableContent(List<List<?>> list) {
+        StringBuilder sb = new StringBuilder();
+        for(List<?> ls : list) {
+            sb.append("|");
+            for(Object obj : ls)
+                sb.append(middleString(value(obj))).append("|");
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
+    private static void printTable(String tableContent, String title, String[] labels) {
         final int NUM_OF_LABEL = labels.length;
 
+        // * Print the header
         System.out.println(title);
         printDottedLine(NUM_OF_LABEL);
 
@@ -21,13 +51,10 @@ public class TableUtil {
 
         printDottedLine(NUM_OF_LABEL);
 
-        List<Data<E>> dataList = feature.dataList();
-        for (Data<E> data : dataList)
-            System.out.printf("|%s|%s|%s|\n",
-                    middleString(data.getUser()),
-                    middleString(value(data.getData())),
-                    middleString(value(data.getDate())));
+        // * Print the table content
+        System.out.print(tableContent);
 
+        // * Print the footer
         printDottedLine(NUM_OF_LABEL);
         System.out.println();
     }
