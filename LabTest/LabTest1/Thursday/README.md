@@ -141,7 +141,7 @@ public static <E> ArrayList<E> arr2vec(Class<E> c, int[] array) {
     }
 ```
 
-The purpose of the arr2vec method, as its name suggests, is to convert an array of integers into a vector of integers, representing the concept of a vector in linear algebra. For instance, given the vector representation v = <x1, x2, x3>, converting the integer array int[] arr = {1, 2, 3} to a vector would result in v = <1, 2, 3>.
+The purpose of the `arr2vec` method, as its name suggests, is to convert an array of integers into a vector of integers, representing the concept of a vector in linear algebra. For instance, given the vector representation v = <x1, x2, x3>, converting the integer array `int[] arr = {1, 2, 3}` to a vector would result in v = <1, 2, 3>.
 
 ### .ones(Class<E> c, int size)
 
@@ -160,11 +160,11 @@ public static <E> ArrayList<E> ones(Class<E> c, int size) {
     }
 ```
 
-Similarly, the ones() method generates a vector of 1's with a size of size. For example, if the given size is 3, the method should produce the vector <1, 1, 1>. Conversely, if the size is 4, the method should generate the vector <1, 1, 1, 1>.
+Similarly, the `ones()` method generates a vector of 1's with a size of `size`. For example, if the given `size` is 3, the method should produce the vector <1, 1, 1>. Conversely, if the `size` is 4, the method should generate the vector <1, 1, 1, 1>.
 
 ### Class.java
 
-The most challenging aspect of the code lies in the invocation of the c.getDeclaredConstructor(int.class).newInstance(i) method and the ReflectiveOperationException class. Essentially, the `Class<E>` is a generic class that can represent the class of an object. Typically, we use the `instanceof` operator to check if an object is a subclass of another class, as shown in the example:
+The most challenging aspect of the code lies in the invocation of the `c.getDeclaredConstructor(int.class).newInstance(i)` method and the `ReflectiveOperationException class`. Essentially, the `Class<E>` is a generic class that can represent the class of an object. Typically, we use the `instanceof` operator to check if an object is a subclass of another class, as shown in the example:
 
 ```java
 Integer val = 5;
@@ -182,19 +182,23 @@ System.out.println(val.getClass() == Number.class); // Output: false
 
 ### .getDeclaredConstructor()
 
-The method c.getDeclaredConstructor(int.class).newInstance(i) is a part of Java's Reflection API, which allows you to access and manipulate classes and objects dynamically, at runtime.
+The method `c.getDeclaredConstructor(int.class).newInstance(i)` is a part of Java's Reflection API, which allows you to access and manipulate classes and objects dynamically, at runtime.
 
-The getDeclaredConstructor(int.class) method returns a Constructor object that represents the constructor of the class c that takes an int parameter. The newInstance(i) method creates a new instance of the class c by invoking the constructor with the int value i as the argument.
+The `getDeclaredConstructor(int.class)` method returns a `Constructor` object that represents the constructor of the class `c` that takes an int parameter. The `newInstance(i)` method creates a new instance of the class `c` by invoking the constructor with the int value `i` as the argument.
 
 ### ReflectiveOperationException.java
 
-The ReflectiveOperationException class is an exception that is thrown when an error occurs during reflection, such as when a method or constructor cannot be found, or when there is a security violation. It is a checked exception, which means that it must be caught or declared to be thrown by the calling method.
+The `ReflectiveOperationException` class is an exception that is thrown when an error occurs during reflection, such as when a method or constructor cannot be found, or when there is a security violation. It is a checked exception, which means that it must be caught or declared to be thrown by the calling method.
 
-It is important to note that Class.newInstance() can only invoke the zero-argument constructor, while Constructor.newInstance() can invoke any constructor, regardless of the number of parameters. Additionally, Class.newInstance() throws any exception thrown by the constructor, while Constructor.newInstance() always wraps the thrown exception with an InvocationTargetException. Finally, Class.newInstance() requires that the constructor be visible, while Constructor.newInstance() may invoke private constructors under certain circumstances.
+It is important to note that 
+                                 
+- `Class.newInstance()` can only invoke the zero-argument constructor, while `Constructor.newInstance()` can invoke any constructor, regardless of the number of parameters. 
+- Additionally, `Class.newInstance()` throws any exception thrown by the constructor, while `Constructor.newInstance()` always wraps the thrown exception with an `InvocationTargetException`. 
+- Finally, `Class.newInstance()` requires that the constructor be visible, while `Constructor.newInstance()` may invoke private constructors under certain circumstances.
 
 ### Conclusion
 
-Hence, basically, the code just take the `Class<E>` parameter and invokes the constructor to wrap the `int` value within either CPUInt or GPUInt for subsequent operations.
+Hence, basically, the code just take the `Class<E>` parameter and invokes the constructor to wrap the `int` value within either `CPUInt` or `GPUInt` for subsequent operations.
 
 ## Code Explanation II - Linear Algebra
 
