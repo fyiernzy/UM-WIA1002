@@ -1,4 +1,4 @@
-package Scratch;
+package Challenges.LinkedList.Q1;
 
 import java.util.Stack;
 import java.util.ArrayList;
@@ -20,9 +20,7 @@ public class NodeUtil {
                     current = current.next;
                 }
             }
-
             current.next = flattenRecursive(next);
-            
         }
         return head;
     }
@@ -109,7 +107,6 @@ public class NodeUtil {
                 }
             }
         }
-
         return head;
     }
 }
