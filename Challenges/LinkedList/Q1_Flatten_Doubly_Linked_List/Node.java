@@ -1,4 +1,4 @@
-package Scratch;
+package Challenges.LinkedList.Q1;
 
 public class Node {
     public int val;
