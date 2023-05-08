@@ -6,7 +6,7 @@ import java.util.PriorityQueue;
 public class T7bQ4 {
 	// (a) 
 	// To ensure the PriorityQueue removes elements based on the given comparison logic, 
-	// specifically in alphabetical order by name.
+	// specifically by string length of name.
 	
 	// (b)
 	//	Ali
