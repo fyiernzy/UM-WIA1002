@@ -30,4 +30,8 @@ public class Telephone {
 	public String makeFullNumber() {
 		return String.format("%s-%s", this.areaCode, this.number);
 	}
+
+	public void hello() {
+		System.out.println("Hello, I am a telephone object");
+	}
 }
