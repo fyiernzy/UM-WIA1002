@@ -1,19 +1,18 @@
-package Lab7.Q3;
+package WIA1002_2.Lab7.Q3;
 
 public class Main {
-	public static void main(String[] args) {
-		new Main().run();
-	}
-	
-	public void run() {
-		String exp = "4+5*7"; 
-		// (5*4+8)/7+2 // 4+5*7
-		BinaryTree<Character> tree = new BinaryTree<>();
-		for(char ch : exp.toCharArray()) {
-			if(ch != '(' && ch != ')')
-				tree.add(ch);
-		}
+    public static void main(String[] args) {
+		String exp;
+		exp = "4+5*7";
+		testExpression(exp);
+		exp = "(5*4+8)/7+2";
+		testExpression(exp);
 		
+	}
+
+	public static void testExpression(String exp) {
+		BSTExpression tree = BSTExpression.create(exp);
+		System.out.println("Expression : " + tree.getExpression());
 		System.out.println("The number of element in the tree : " + tree.getSize());
 		System.out.print("The tree elements - INORDER : ");
 		tree.inOrder();
@@ -21,8 +20,6 @@ public class Main {
 		tree.preOrder();
 		System.out.print("The tree elements - POSTRDER : ");
 		tree.postOrder();
-		System.out.print("The tree elements - LEVEL ORDER : ");
-		tree.levelOrder();
-		
+		System.out.println();
 	}
 }
