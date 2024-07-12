@@ -6,6 +6,7 @@ public class Transaction {
 	public static char WITHDRAW = 'W';
 	public static char DEPOSIT = 'D';
 	
+	String typeS;
 	private Date date;
 	private char type;
 	private double amount;

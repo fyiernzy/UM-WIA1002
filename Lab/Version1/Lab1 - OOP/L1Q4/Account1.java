@@ -57,8 +57,7 @@ public class Account1 extends Account {
 	
 	public void printTransactionHistory() {
 		System.out.println("Transactions:");
-		for(Transaction transaction : ls) {
+		for(Transaction transaction : ls)
 			transaction.printDetails();
-		}
 	}
 }

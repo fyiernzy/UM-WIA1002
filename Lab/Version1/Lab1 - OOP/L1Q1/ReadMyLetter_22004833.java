@@ -1,5 +1,3 @@
-package Lab1.L1Q1;
-
 import java.io.*;
 import java.util.Scanner;
 import java.text.SimpleDateFormat;
